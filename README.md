@@ -1,6 +1,10 @@
 # LearnRuntime
 runtime学习笔记
 
+* 对象生成
+* 动态绑定
+* 动态识别
+
 
 1、CountdownButton - runtime解决button重复点击问题
 
