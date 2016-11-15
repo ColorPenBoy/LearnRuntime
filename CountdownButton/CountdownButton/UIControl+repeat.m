@@ -16,41 +16,42 @@ static const char *UIControl_acceptedEventTime   = "UIControl_acceptedEventTime"
 
 + (void)load {
     Method a = class_getInstanceMethod(self, @selector(sendAction:to:forEvent:));
-    Method b = class_getInstanceMethod(self, @selector(__uxy_sendAction:to:forEvent:));
+    Method b = class_getInstanceMethod(self, @selector(__hxh_sendAction:to:forEvent:));
     method_exchangeImplementations(a, b);
 }
 
-- (NSTimeInterval)uxy_acceptEventInterval {
+- (NSTimeInterval)hxh_acceptEventInterval {
     return [objc_getAssociatedObject(self, UIControl_acceptEventInterval) doubleValue];
 }
 
-- (void)setUxy_acceptEventInterval:(NSTimeInterval)uxy_acceptEventInterval {
-    objc_setAssociatedObject(self, UIControl_acceptEventInterval, @(uxy_acceptEventInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+- (void)setHxh_acceptEventInterval:(NSTimeInterval)hxh_acceptEventInterval {
+    objc_setAssociatedObject(self, UIControl_acceptEventInterval, @(hxh_acceptEventInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSTimeInterval)uxy_acceptedEventTime {
+- (NSTimeInterval)hxh_acceptedEventTime {
     return [objc_getAssociatedObject(self, UIControl_acceptedEventTime) doubleValue];
 }
 
-- (void)setUxy_acceptedEventTime:(NSTimeInterval)uxy_acceptedEventTime {
-    objc_setAssociatedObject(self, UIControl_acceptedEventTime, @(uxy_acceptedEventTime), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setHxh_acceptedEventTime:(NSTimeInterval)hxh_acceptedEventTime {
+    objc_setAssociatedObject(self, UIControl_acceptedEventTime, @(hxh_acceptedEventTime), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)__uxy_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
+- (void)__hxh_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
     
-    if ([self uxy_ignoreEvent]) {
+    if ([self hxh_ignoreEvent]) {
         return;
     }
     
-    if (self.uxy_acceptEventInterval > 0) {
-        self.uxy_acceptedEventTime = NSDate.date.timeIntervalSince1970;
+    if (self.hxh_acceptEventInterval > 0) {
+        self.hxh_acceptedEventTime = NSDate.date.timeIntervalSince1970;
     }
     
-    [self __uxy_sendAction:action to:target forEvent:event];
+    [self __hxh_sendAction:action to:target forEvent:event];
 }
 
-- (BOOL)uxy_ignoreEvent {
-    return NSDate.date.timeIntervalSince1970 - self.uxy_acceptedEventTime < self.uxy_acceptEventInterval;
+- (BOOL)hxh_ignoreEvent {
+    return NSDate.date.timeIntervalSince1970 - self.hxh_acceptedEventTime < self.hxh_acceptEventInterval;
 }
 
 @end

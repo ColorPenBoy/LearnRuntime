@@ -28,15 +28,17 @@ static const NSInteger second = 59;
     self.tempBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.tempBtn.frame = CGRectMake(100, 100, 100, 40);
     [self.tempBtn addTarget:self action:@selector(clickWithInterval:) forControlEvents:UIControlEventTouchUpInside];
-    self.tempBtn.uxy_acceptEventInterval = second;
-    [self.tempBtn setBackgroundColor:[UIColor redColor]];
+    self.tempBtn.hxh_acceptEventInterval = second;
     [self.tempBtn setTitle:@"倒计时" forState:UIControlStateNormal];
+    [self.tempBtn setBackgroundColor:[UIColor greenColor]];
+    self.tempBtn.layer.cornerRadius = 5.0f;
     [self.view addSubview:self.tempBtn];
 }
 
 - (void)clickWithInterval:(UIButton *)sender {
     self.i = second;
     [self.tempBtn setTitle:[NSString stringWithFormat:@"%ld",(long)self.i] forState:UIControlStateNormal];
+    [self.tempBtn setBackgroundColor:[UIColor redColor]];
     NSLog(@"点击了按钮");
     
     if (self.timer) {
@@ -57,6 +59,7 @@ static const NSInteger second = 59;
     // 倒数为0时，重新开始计时
     if (self.i == 0) {
         [self.tempBtn setTitle:@"倒计时" forState:UIControlStateNormal];
+        [self.tempBtn setBackgroundColor:[UIColor greenColor]];
         if (self.timer) {
             [self.timer invalidate];
             self.timer = nil;
