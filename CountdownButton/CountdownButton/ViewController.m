@@ -9,11 +9,14 @@
 #import "ViewController.h"
 #import "UIControl+repeat.h"
 
+// 倒计时时长（s）
+static const NSInteger second = 59;
+
 @interface ViewController ()
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) UIButton *tempBtn;
-@property (nonatomic, assign) int i;
+@property (nonatomic, assign) NSInteger i;
 
 @end
 
@@ -22,20 +25,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
     self.tempBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.tempBtn.frame = CGRectMake(100, 100, 100, 40);
     [self.tempBtn addTarget:self action:@selector(clickWithInterval:) forControlEvents:UIControlEventTouchUpInside];
-    self.tempBtn.uxy_acceptEventInterval = 5;
+    self.tempBtn.uxy_acceptEventInterval = second;
     [self.tempBtn setBackgroundColor:[UIColor redColor]];
-    [self.tempBtn setTitle:@"5" forState:UIControlStateNormal];
+    [self.tempBtn setTitle:@"倒计时" forState:UIControlStateNormal];
     [self.view addSubview:self.tempBtn];
 }
 
-- (void)clickWithInterval:(UIButton *)btn
-{
-    self.i = 5;
-    [self.tempBtn setTitle:[NSString stringWithFormat:@"%d",self.i] forState:UIControlStateNormal];
+- (void)clickWithInterval:(UIButton *)sender {
+    self.i = second;
+    [self.tempBtn setTitle:[NSString stringWithFormat:@"%ld",(long)self.i] forState:UIControlStateNormal];
     NSLog(@"点击了按钮");
     
     if (self.timer) {
@@ -45,10 +46,22 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(log) userInfo:nil repeats:YES];
 }
 
-- (void)log
-{
-    NSLog(@"%d",self.i--);
-    [self.tempBtn setTitle:[NSString stringWithFormat:@"%d",self.i] forState:UIControlStateNormal];
+- (void)log {
+    
+    --self.i;
+    
+    NSLog(@"%ld",(long)self.i);
+    
+    [self.tempBtn setTitle:[NSString stringWithFormat:@"%ld",(long)self.i] forState:UIControlStateNormal];
+   
+    // 倒数为0时，重新开始计时
+    if (self.i == 0) {
+        [self.tempBtn setTitle:@"倒计时" forState:UIControlStateNormal];
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,10 @@
 
 @interface UIControl (repeat)
 
-@property (nonatomic, assign) NSTimeInterval uxy_acceptEventInterval;   // 可以用这个给重复点击加间隔
+/*!
+ *  可以用这个给重复点击加间隔
+ */
+@property (nonatomic, assign) NSTimeInterval uxy_acceptEventInterval;
 @property (nonatomic, assign) NSTimeInterval uxy_acceptedEventTime;
 
 @end
