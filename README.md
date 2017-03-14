@@ -44,3 +44,5 @@ Objective-C 是消息传递机制（NOT函数调用），每个学习Runtime的�
 虽然，目前iOS已经全面舍弃UIAlertView改用UIAlertViewController，但是透过这个古老的Demo，还能学习到一点runtime的使用思想。
 
 3、ORM ：JSON -> Model
+
+4、使用动态方法解析，实现dynamic属性
