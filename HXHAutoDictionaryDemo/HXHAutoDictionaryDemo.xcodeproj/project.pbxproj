@@ -12,6 +12,8 @@
 		8E2E87911E77E6EE00C56180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E87901E77E6EE00C56180 /* Assets.xcassets */; };
 		8E2E87941E77E6EE00C56180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E87921E77E6EE00C56180 /* LaunchScreen.storyboard */; };
 		8E2E879D1E77E72000C56180 /* HXHAutoDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E879C1E77E72000C56180 /* HXHAutoDictionary.m */; };
+		8E2E87D11E78F02700C56180 /* HXHPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E87D01E78F02700C56180 /* HXHPerson.m */; };
+		8E2E87D41E78F2B300C56180 /* HXHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E87D31E78F2B300C56180 /* HXHLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		8E2E87951E77E6EE00C56180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E2E879B1E77E72000C56180 /* HXHAutoDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXHAutoDictionary.h; sourceTree = "<group>"; };
 		8E2E879C1E77E72000C56180 /* HXHAutoDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXHAutoDictionary.m; sourceTree = "<group>"; };
+		8E2E87CF1E78F02700C56180 /* HXHPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXHPerson.h; sourceTree = "<group>"; };
+		8E2E87D01E78F02700C56180 /* HXHPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXHPerson.m; sourceTree = "<group>"; };
+		8E2E87D21E78F2B300C56180 /* HXHLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXHLocation.h; sourceTree = "<group>"; };
+		8E2E87D31E78F2B300C56180 /* HXHLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXHLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,10 @@
 				8E2E87881E77E6EE00C56180 /* AppDelegate.m */,
 				8E2E879B1E77E72000C56180 /* HXHAutoDictionary.h */,
 				8E2E879C1E77E72000C56180 /* HXHAutoDictionary.m */,
+				8E2E87CF1E78F02700C56180 /* HXHPerson.h */,
+				8E2E87D01E78F02700C56180 /* HXHPerson.m */,
+				8E2E87D21E78F2B300C56180 /* HXHLocation.h */,
+				8E2E87D31E78F2B300C56180 /* HXHLocation.m */,
 				8E2E87901E77E6EE00C56180 /* Assets.xcassets */,
 				8E2E87921E77E6EE00C56180 /* LaunchScreen.storyboard */,
 				8E2E87951E77E6EE00C56180 /* Info.plist */,
@@ -148,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E2E87891E77E6EE00C56180 /* AppDelegate.m in Sources */,
+				8E2E87D11E78F02700C56180 /* HXHPerson.m in Sources */,
 				8E2E87861E77E6EE00C56180 /* main.m in Sources */,
+				8E2E87D41E78F2B300C56180 /* HXHLocation.m in Sources */,
 				8E2E879D1E77E72000C56180 /* HXHAutoDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +312,7 @@
 				8E2E879A1E77E6EE00C56180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

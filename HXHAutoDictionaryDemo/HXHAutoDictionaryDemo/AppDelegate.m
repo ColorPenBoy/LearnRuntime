@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "HXHAutoDictionary.h"
-
+#import "HXHPerson.h"
+#import "HXHLocation.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,13 @@
     dict.date = [NSDate dateWithTimeIntervalSince1970:475372800];
     NSLog(@"dict.date - %@",dict.date);
     
+    // TODO:
+    HXHPerson *person = [[HXHPerson alloc] initWithFirstName:@"Bob" lastName:@"Smith"];
+    NSLog(@"person - %@", person);
+    
+    // TODO:
+    HXHLocation * location = [[HXHLocation alloc] initWithTitle:@"London" latitude:51.506 longitude:0];
+    NSLog(@"location - %@", location);
     
     return YES;
 }
