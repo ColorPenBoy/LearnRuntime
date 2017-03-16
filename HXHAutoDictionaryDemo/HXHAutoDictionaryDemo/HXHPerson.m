@@ -19,7 +19,11 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@: %p, \%@ %@\>",[self class], self, _firstName, _lastName];
+    return [NSString stringWithFormat:@"<%@: %p, %@ %@>",[self class], self, _firstName, _lastName];
+}
+
+- (NSString *)debugDescription {
+    return [NSString stringWithFormat:@"<%@: %p, %@ %@>",[self class], self, _firstName, _lastName];
 }
 
 @end
